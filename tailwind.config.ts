@@ -1,3 +1,4 @@
+import { Container } from "postcss";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -13,6 +14,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+    },
+    colors: {
+      sideBar: "#1C1D22",
+      icons: "#FFFFFF",
+      container: "#FFFFFF",
+      subTitle: "#1C1D221",
+      progressInitial: "#FFA048",
+      progressMedium: "#FF7979",
+      progressDone: "#78D700",
     },
   },
   plugins: [],
