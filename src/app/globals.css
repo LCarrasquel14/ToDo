@@ -2,8 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Add any custom CSS here */
-
-.exo2 {
-  font-family: var(--font-exo2);
+.exo {
+  font-family: "Exo 2", sans-serif;
 }

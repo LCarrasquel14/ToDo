@@ -6,7 +6,7 @@ type Props = {
 
 const Button = ({ label }: Props) => {
   return (
-    <button className="py-3 px-6 bg-title text-white rounded-full font-semibold">
+    <button className="py-3 px-6 bg-titleColor text-white rounded-full font-semibold">
       {label}
     </button>
   );

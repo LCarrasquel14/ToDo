@@ -15,15 +15,68 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    fontSize: {
+      PageTitle: [
+        "30px",
+        {
+          lineHeight: "30px",
+          letterSpacing: "-0.01em",
+          fontWeight: "700",
+        },
+      ],
+      title: [
+        "20px",
+        {
+          lineHeight: "20px",
+          letterSpacing: "-0.01em",
+          fontWeight: "700",
+        },
+      ],
+      subtitle: [
+        "16px",
+        {
+          lineHeight: "16px",
+          letterSpacing: "-0.01em",
+          fontWeight: "700",
+        },
+      ],
+      option: [
+        "16px",
+        {
+          lineHeight: "16px",
+          letterSpacing: "-0.01em",
+          fontWeight: "600",
+        },
+      ],
+      description: [
+        "14px",
+        {
+          lineHeight: "14px",
+          letterSpacing: "-0.01em",
+          fontWeight: "500",
+        },
+      ],
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
+    },
     fontFamily: {
       exo2: ["var(--font-exo2)"],
     },
     colors: {
-      title: "#1C1D22",
-      subtitle: "#1C1D2280",
+      titleColor: "#1C1D22",
+      subtitleColor: "#1C1D2280",
       white: "#ffffff",
     },
   },
   plugins: [],
 };
+
 export default config;
