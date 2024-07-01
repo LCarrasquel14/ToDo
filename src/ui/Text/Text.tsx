@@ -1,5 +1,6 @@
 import { createElement } from "react";
 import { clsx } from "clsx";
+import { OptionProps } from "../Menu/Menu";
 
 type Props = {
   text: string;
@@ -12,6 +13,8 @@ type Props = {
     | "descriptionCard"
     | "option"
     | "optionSelected";
+
+  onClick?: () => void;
 };
 
 const Text = ({ text, tag = "span", variant }: Props) => {
@@ -26,7 +29,13 @@ const Text = ({ text, tag = "span", variant }: Props) => {
     "text-titleColor text-option": variant === "optionSelected",
   });
 
-  return createElement(tag, { className: `${combinedClasses} ` }, `${text}`);
+  return createElement(
+    tag,
+    {
+      className: `${combinedClasses} `,
+    },
+    `${text}`
+  );
 };
 
 export default Text;

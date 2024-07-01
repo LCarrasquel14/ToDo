@@ -5,6 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 export interface OptionProps {
   label: string;
   key: string;
+  selected: boolean;
 }
 interface MenuProps {
   options: OptionProps[];
@@ -16,7 +17,7 @@ const Menu = ({ options, onOptionClicked }: MenuProps) => {
   return (
     <div className="w-[259px] h-9 flex flex-row relative">
       <CgMenuRound
-        className={`cursor-pointer ${showMenu ? "hidden" : "block"}`}
+        className={`cursor-pointer ${showMenu ? "hidden" : "block"} size-7`}
         onClick={() => setShowMenu(!showMenu)}
       />
       {showMenu && (

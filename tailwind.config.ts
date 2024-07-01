@@ -74,6 +74,8 @@ const config: Config = {
       titleColor: "#1C1D22",
       subtitleColor: "#1C1D2280",
       white: "#ffffff",
+      vector: "#1C1D220A",
+      black: "#000000",
     },
   },
   plugins: [],
