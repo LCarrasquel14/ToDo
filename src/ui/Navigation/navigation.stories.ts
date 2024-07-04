@@ -20,12 +20,12 @@ export const defeault: Story = {
       {
         label: "Design system",
         key: "2",
-        selected: false,
+        selected: true,
       },
       {
         label: "User flow",
         key: "3",
-        selected: true,
+        selected: false,
       },
       {
         label: "Ux research",

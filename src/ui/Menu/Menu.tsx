@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { CgMenuRound } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
+import Icon from "../Icon/Icon";
+import Text from "../Text/Text";
 
 export interface OptionProps {
   label: string;
@@ -16,18 +17,18 @@ const Menu = ({ options, onOptionClicked }: MenuProps) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <div className="w-[259px] h-9 flex flex-row relative">
-      <CgMenuRound
-        className={`cursor-pointer ${showMenu ? "hidden" : "block"} size-7`}
+      <i
         onClick={() => setShowMenu(!showMenu)}
-      />
+        className={`cursor-pointer w-[26px] h-[26px] ${showMenu && "hidden"}`}
+      >
+        <Icon icon="threePoints" size={26} />
+      </i>
       {showMenu && (
         <div className="absolute">
           <ul className="flex flex-col right-0 border rounded w-[100px] p-5">
-            {options.map((option: OptionProps, index: number) => (
+            {options.map((option: OptionProps) => (
               <ol onClick={() => onOptionClicked(option.key)} key={option.key}>
-                <span className="font-exo2 text-titleColor text-subtitle cursor-pointer">
-                  {option.label}
-                </span>
+                <Text variant="titleCard" text={option.label} />
               </ol>
             ))}
           </ul>

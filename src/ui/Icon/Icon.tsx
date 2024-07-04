@@ -1,6 +1,6 @@
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io"; //down arrow
-import { CiCircleMore } from "react-icons/ci"; //three points
+import { FaRegCircle } from "react-icons/fa";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2"; //magnifying glass
 import { CiCalendar } from "react-icons/ci"; //calendar
 import { IoIosNotificationsOutline } from "react-icons/io"; //notification
@@ -28,6 +28,7 @@ type Props = {
     | "stadistics"
     | "icon";
   onClick?: () => void;
+  children?: React.ReactNode;
 };
 
 const Icon = ({ size, icon }: Props) => {
@@ -35,9 +36,9 @@ const Icon = ({ size, icon }: Props) => {
     case "arrowDown":
       return <IoIosArrowDown size={size} />;
     case "threePoints":
-      return <CiCircleMore size={size} />;
+      return <Image src="/More.png" width={size} height={size} alt="logo" />;
     case "Logo":
-      return <Image src="/Logo.png" width={size} height={size} alt="logo" />;
+      return <Image src="/Logo.png" width={26} height={26} alt="logo" />;
     case "calendar":
       return <CiCalendar size={size} />;
     case "notification":
