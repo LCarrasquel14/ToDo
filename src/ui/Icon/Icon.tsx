@@ -1,6 +1,5 @@
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io"; //down arrow
-import { FaRegCircle } from "react-icons/fa";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2"; //magnifying glass
 import { CiCalendar } from "react-icons/ci"; //calendar
 import { IoIosNotificationsOutline } from "react-icons/io"; //notification
@@ -10,7 +9,7 @@ import { RxExit } from "react-icons/rx"; //exit
 import { MdOutlineKeyboardArrowRight } from "react-icons/md"; //right arrow
 import Image from "next/image";
 
-type Props = {
+export type IconProps = {
   size: number;
   icon:
     | "arrowDown"
@@ -26,15 +25,21 @@ type Props = {
     | "search"
     | "settings"
     | "stadistics"
-    | "icon";
+    | "icon"
+    | "board"
+    | "add";
   onClick?: () => void;
   children?: React.ReactNode;
 };
 
-const Icon = ({ size, icon }: Props) => {
+const Icon = ({ size, icon }: IconProps) => {
   switch (icon) {
     case "arrowDown":
       return <IoIosArrowDown size={size} />;
+    case "add":
+      return <Image src="/Add.png" width={size} height={size} alt="add" />;
+    case "board":
+      return <Image src="/Board.png" width={size} height={size} alt="board" />;
     case "threePoints":
       return <Image src="/More.png" width={size} height={size} alt="logo" />;
     case "Logo":
