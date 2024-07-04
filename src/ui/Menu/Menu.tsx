@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import Icon from "../Icon/Icon";
