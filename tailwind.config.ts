@@ -81,6 +81,8 @@ const config: Config = {
       medium: "rgba(255, 160, 72, 1)",
       finish: "rgba(120, 215, 0, 1)",
       almostCompleted: "rgba(75, 105, 255, 1)",
+      toggleContainer: "rgba(28, 29, 34, 0.04)",
+      light: "rgba(255, 255, 255, 1)",
     },
   },
   plugins: [],

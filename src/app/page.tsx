@@ -1,8 +1,14 @@
 import Button from "@/ui/Button/Button";
-import Menu from "@/ui/Menu/Menu";
 import React from "react";
-import { options } from "../data/menu";
-import Navigation from "@/ui/Navigation/Navigation";
+import Toggle from "@/ui/Toggle/Toggle";
+import { IconProps } from "@/ui/Icon/Icon";
+
+type Button = {
+  label: string;
+  icon: IconProps["icon"];
+  id: string;
+  selected: boolean;
+};
 
 const page = () => {
   const onOptionClicked = (id: string) => {
@@ -13,18 +19,7 @@ const page = () => {
     console.log(`selected ${id}`);
   };
 
-  return (
-    <div>
-      <Button label="New template" />
-
-      <Menu options={options} onOptionClicked={onOptionClicked} />
-      <Navigation
-        title="Projects"
-        options={options}
-        onOptionSelected={onOptionSelected}
-      />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default page;

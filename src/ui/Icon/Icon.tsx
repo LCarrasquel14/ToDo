@@ -30,7 +30,9 @@ export type IconProps = {
     | "board"
     | "add"
     | "tasks"
-    | "close";
+    | "close"
+    | "darkmode"
+    | "lightmode";
 
   onClick?: () => void;
   children?: React.ReactNode;
@@ -40,6 +42,19 @@ const Icon = ({ size, icon }: IconProps) => {
   switch (icon) {
     case "arrowDown":
       return <IoIosArrowDown size={size} />;
+    case "darkmode":
+      return (
+        <Image src="/darkmode.svg" width={size} height={size} alt="darkmode" />
+      );
+    case "lightmode":
+      return (
+        <Image
+          src="/lightmode.svg"
+          width={size}
+          height={size}
+          alt="lightmode"
+        />
+      );
     case "close":
       return <AiOutlineClose size={size} />;
     case "tasks":

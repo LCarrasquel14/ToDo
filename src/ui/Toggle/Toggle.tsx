@@ -1,29 +1,47 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Icon, { IconProps } from "../Icon/Icon";
 import Text from "../Text/Text";
 
-type Button = {
+export type Button = {
   label: string;
   icon: IconProps["icon"];
   id: string;
+  selected: boolean;
 };
 type Props = {
   buttons: [Button, Button];
-  onToggle: () => void;
-  selected: boolean;
 };
 
-const Toggle = ({ onToggle, selected, buttons }: Props) => {
+const Toggle = ({ buttons }: Props) => {
+  const [selected, setSelected] = useState(buttons[0].selected);
+  const onToggle = () => {
+    buttons.map((button) => {
+      if (button.selected) {
+        setSelected(false);
+        button.selected = false;
+      } else {
+        setSelected(true);
+        button.selected = true;
+      }
+    });
+  };
+  const baseClass =
+    "flex flex-row items-center justify-center gap-2 rounded-full grow w-[127px] h-[34px] cursor-pointer";
+
   return (
-    <div>
+    <div className="bg-toggleContainer rounded-full flex flex-row items-center justify-around w-[262px] h-[42px] px-1">
       {buttons.map((button) => (
         <div
           key={button.id}
-          onClick={() => onToggle()}
-          className="flex flex-row items-center gap-2"
+          onClick={onToggle}
+          className={`${baseClass} ${button.selected && "bg-light shadow-lg shadow-indigo-500/40 "}`}
         >
-          <Icon icon={button.icon} size={24} />
-          <Text text={button.label} variant="subtitle" />
+          <Icon icon={button.icon} size={20} />
+          <Text
+            text={button.label}
+            variant={`${button.selected ? "optionSelected" : "option"}`}
+          />
         </div>
       ))}
     </div>
