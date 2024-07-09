@@ -1,23 +1,25 @@
 import ReactModal from "react-modal";
-
 import React from "react";
 import Icon from "../Icon/Icon";
+import { FC, ReactNode } from "react";
 
 type Props = {
   isOpen: boolean;
   onClose?: () => void;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
-const Modal = ({ isOpen, onClose, children }: Props) => {
-  return isOpen ? (
-    <>
-      <i
-        className="cursor-pointer flex items-center justify-end "
-        onClick={onClose}
-      >
-        <Icon icon="close" size={24} />
-      </i>
+const Modal: FC<Props> = ({ isOpen, onClose, children }) => {
+  return (
+    <div>
+      {isOpen && (
+        <i
+          className="cursor-pointer flex items-center justify-end "
+          onClick={onClose}
+        >
+          <Icon icon="close" size={24} />
+        </i>
+      )}
       <ReactModal
         isOpen={isOpen}
         overlayClassName="modal-overlay"
@@ -29,8 +31,8 @@ const Modal = ({ isOpen, onClose, children }: Props) => {
       >
         {children}
       </ReactModal>
-    </>
-  ) : null;
+    </div>
+  );
 };
 
 export default Modal;

@@ -23,6 +23,12 @@ export const Default: Story = {
         selected: false,
         icon: "add",
       },
+      {
+        label: "Edit view",
+        key: "3",
+        selected: false,
+        icon: "calendar",
+      },
     ],
   },
 };

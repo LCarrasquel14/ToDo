@@ -1,7 +1,7 @@
-import Button from "@/ui/Button/Button";
 import React from "react";
-import Toggle from "@/ui/Toggle/Toggle";
+import { tagProps } from "@/ui/Tag/Tag";
 import { IconProps } from "@/ui/Icon/Icon";
+import Tag from "@/ui/Tag/Tag";
 
 type Button = {
   label: string;
@@ -10,16 +10,26 @@ type Button = {
   selected: boolean;
 };
 
-const page = () => {
-  const onOptionClicked = (id: string) => {
-    alert(id);
-  };
-
-  const onOptionSelected = (id: string) => {
-    console.log(`selected ${id}`);
-  };
-
-  return <div></div>;
+const Page = () => {
+  const tagContainer: tagProps[] = [
+    {
+      label: "Board view",
+      key: "1",
+      selected: true,
+      icon: "board",
+    },
+    {
+      label: "Add view",
+      key: "2",
+      selected: false,
+      icon: "add",
+    },
+  ];
+  return (
+    <div>
+      <Tag tagContainer={tagContainer} />
+    </div>
+  );
 };
 
-export default page;
+export default Page;

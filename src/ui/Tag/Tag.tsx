@@ -1,7 +1,5 @@
-import React from "react";
 import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
-import { tags } from "@/data/tag";
 import { IconProps } from "@/ui/Icon/Icon";
 
 export type tagProps = {
@@ -15,21 +13,25 @@ type TagProps = {
   tagContainer: tagProps[];
 };
 
-const Tag = ({ tagContainer = tags }: TagProps) => {
+const Tag = ({ tagContainer }: TagProps) => {
+  const handleBoardView = (id: string) => {
+    console.log(`selected ${id}`);
+  };
   return (
-    <ul className="p-3 flex flex-row gap-4">
-      {tagContainer.map((tag) => {
-        return (
-          <li key={tag.key} className="flex items-center gap-1">
-            <Icon icon={tag.icon} size={14} />
-            <Text
-              text={tag.label}
-              variant={`${tag.selected ? "optionSelected" : "option"}`}
-              size={10}
-            />
-          </li>
-        );
-      })}
+    <ul className="flex gap-4">
+      {tagContainer.map((tag) => (
+        <li
+          key={tag.key}
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={() => handleBoardView(tag.key)}
+        >
+          <Icon icon={tag.icon} size={14} />
+          <Text
+            variant={tag.selected ? "optionSelected" : "option"}
+            text={tag.label}
+          />
+        </li>
+      ))}
     </ul>
   );
 };
