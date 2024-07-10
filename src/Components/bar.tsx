@@ -8,10 +8,8 @@ type Props = {
 };
 
 const percentageBar = ({ progress, maxLimit, validate }: Props) => {
-  const barPercentage = Math.round((progress / maxLimit) * 100)
-    .toString()
-    .concat("%");
   const percentage = Math.round((progress / maxLimit) * 100);
+  const barPercentage = `${percentage}%`;
   const baseClass = `h-full max-w-full`;
   const combinated = clsx(baseClass, {
     "bg-initial": percentage < 33,

@@ -10,19 +10,12 @@ type Props = {
 };
 
 const Progress = ({ maxLimit, progress }: Props) => {
-  const [showMenu, setShowMenu] = React.useState(false);
   const validate = progress <= maxLimit;
   return (
     <div className="w-[280px] h-[30px]">
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center gap-1">
-          <i
-            onClick={() => setShowMenu(!showMenu)}
-            className="cursor-pointer mt-[7px]"
-          >
-            {" "}
-            <Icon icon="tasks" size={16} />
-          </i>
+          <Icon icon="tasks" size={16} className="cursor-pointer mt-[7px]" />
           <Text variant="subtitle" text="progress" />
         </div>
         <span>

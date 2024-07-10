@@ -9,15 +9,10 @@ type Props = {
   children?: React.ReactNode;
 };
 
-const Modal = ({ isOpen, onClose, children }: Props) => {
+const Modal = ({ isOpen, children }: Props) => {
   return isOpen ? (
-    <>
-      <i
-        className="cursor-pointer flex items-center justify-end "
-        onClick={onClose}
-      >
-        <Icon icon="close" size={24} />
-      </i>
+    <div className="flex items-center justify-end">
+      <Icon icon="close" size={24} className="cursor-pointer" />
       <ReactModal
         isOpen={isOpen}
         overlayClassName="modal-overlay"
@@ -29,7 +24,7 @@ const Modal = ({ isOpen, onClose, children }: Props) => {
       >
         {children}
       </ReactModal>
-    </>
+    </div>
   ) : null;
 };
 
