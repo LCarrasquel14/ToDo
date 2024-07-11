@@ -7,7 +7,7 @@ type Props = {
   validate?: boolean;
 };
 
-const percentageBar = ({ progress, maxLimit, validate }: Props) => {
+const PercentageBar = ({ progress, maxLimit, validate }: Props) => {
   const barPercentage = Math.round((progress / maxLimit) * 100)
     .toString()
     .concat("%");
@@ -26,4 +26,4 @@ const percentageBar = ({ progress, maxLimit, validate }: Props) => {
   ) : null;
 };
 
-export default percentageBar;
+export default PercentageBar;

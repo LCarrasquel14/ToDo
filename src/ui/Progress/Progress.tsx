@@ -2,7 +2,7 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
-import ProgressBar from "@/Components/bar";
+import ProgressBar from "@/Components/Bar";
 
 type Props = {
   maxLimit: number;

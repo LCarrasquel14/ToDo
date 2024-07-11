@@ -62,7 +62,7 @@ const Icon = ({ size, icon }: IconProps) => {
     case "add":
       return <Image src="/Add.png" width={size} height={size} alt="add" />;
     case "board":
-      return <Image src="/Board.png" width={size} height={size} alt="board" />;
+      return <Image src="/Board.svg" width={size} height={size} alt="board" />;
     case "threePoints":
       return <Image src="/More.png" width={size} height={size} alt="logo" />;
     case "Logo":
