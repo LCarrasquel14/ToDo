@@ -18,11 +18,11 @@ const Tag = ({ tagContainer }: TagProps) => {
     console.log(`selected ${id}`);
   };
   return (
-    <ul className="flex gap-4">
+    <ul className="flex gap-4 h-9">
       {tagContainer.map((tag) => (
         <li
           key={tag.key}
-          className="flex items-center gap-2 cursor-pointer"
+          className={`flex items-center gap-2 cursor-pointer ${tag.selected && "border-b-2 border-indigo-500"}`}
           onClick={() => handleBoardView(tag.key)}
         >
           <Icon icon={tag.icon} size={14} />
