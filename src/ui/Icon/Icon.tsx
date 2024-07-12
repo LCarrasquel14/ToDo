@@ -40,7 +40,6 @@ export type IconProps = {
 };
 
 const Icon = ({ size, icon, className }: IconProps) => {
-  console.log(className);
   switch (icon) {
     case "arrowDown":
       return <IoIosArrowDown size={size} className={className} />;

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import Icon, { IconProps } from "../Icon/Icon";
 import Text from "../Text/Text";
 
@@ -11,12 +11,10 @@ export type Button = {
 };
 type Props = {
   buttons: [Button, Button];
+  handleButtonClick: (id: string) => void;
 };
 
-const Toggle = ({ buttons }: Props) => {
-  const onToggle = (id: string) => {
-    console.log(`selected ${id}`);
-  };
+const Toggle = ({ buttons, handleButtonClick }: Props) => {
   const baseClass =
     "flex flex-row items-center justify-center gap-2 rounded-full grow w-[127px] h-[34px] cursor-pointer";
 
@@ -25,7 +23,7 @@ const Toggle = ({ buttons }: Props) => {
       {buttons.map((button) => (
         <div
           key={button.id}
-          onClick={() => onToggle(button.id)}
+          onClick={() => handleButtonClick(button.id)}
           className={`${baseClass} ${button.selected && "bg-light shadow-lg shadow-indigo-500/40 "}`}
         >
           <Icon icon={button.icon} size={20} />
