@@ -6,6 +6,7 @@ import { IoIosNotificationsOutline } from "react-icons/io"; //notification
 import { CiUser } from "react-icons/ci"; //user
 import { IoCloudUploadOutline } from "react-icons/io5"; //upload
 import { RxExit } from "react-icons/rx"; //exit
+import { AiOutlineClose } from "react-icons/ai";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md"; //right arrow
 import Image from "next/image";
 
@@ -27,7 +28,12 @@ export type IconProps = {
     | "stadistics"
     | "icon"
     | "board"
-    | "add";
+    | "add"
+    | "tasks"
+    | "close"
+    | "darkmode"
+    | "lightmode";
+
   onClick?: () => void;
   children?: React.ReactNode;
 };
@@ -36,10 +42,27 @@ const Icon = ({ size, icon }: IconProps) => {
   switch (icon) {
     case "arrowDown":
       return <IoIosArrowDown size={size} />;
+    case "darkmode":
+      return (
+        <Image src="/darkmode.svg" width={size} height={size} alt="darkmode" />
+      );
+    case "lightmode":
+      return (
+        <Image
+          src="/lightmode.svg"
+          width={size}
+          height={size}
+          alt="lightmode"
+        />
+      );
+    case "close":
+      return <AiOutlineClose size={size} />;
+    case "tasks":
+      return <Image src="/Tasks.svg" width={size} height={size} alt="tasks" />;
     case "add":
       return <Image src="/Add.png" width={size} height={size} alt="add" />;
     case "board":
-      return <Image src="/Board.png" width={size} height={size} alt="board" />;
+      return <Image src="/Board.svg" width={size} height={size} alt="board" />;
     case "threePoints":
       return <Image src="/More.png" width={size} height={size} alt="logo" />;
     case "Logo":

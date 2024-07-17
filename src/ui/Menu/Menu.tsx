@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
 import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
 
@@ -25,18 +24,17 @@ const Menu = ({ options, onOptionClicked }: MenuProps) => {
         <Icon icon="threePoints" size={26} />
       </i>
       {showMenu && (
-        <div className="absolute">
-          <ul className="flex flex-col right-0 border rounded w-[100px] p-5">
+        <div className="flex flex-row relative">
+          <i onClick={() => setShowMenu(!showMenu)} className="cursor-pointer">
+            <Icon icon="close" size={20} />
+          </i>
+          <ul className="flex flex-col border rounded w-[100px] h-[98px] p-[10px] top-[20px] right-[-95px] items-start absolute">
             {options.map((option: OptionProps) => (
               <ol onClick={() => onOptionClicked(option.key)} key={option.key}>
                 <Text variant="titleCard" text={option.label} />
               </ol>
             ))}
           </ul>
-          <AiOutlineClose
-            className="cursor-pointer relative top-[-110px] right-[-80px]"
-            onClick={() => setShowMenu(!showMenu)}
-          />
         </div>
       )}
     </div>

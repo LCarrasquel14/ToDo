@@ -8,7 +8,7 @@ const meta: Meta<typeof Navigation> = {
 export default meta;
 type Story = StoryObj<typeof Navigation>;
 
-export const defeault: Story = {
+export const Default: Story = {
   args: {
     title: "Projects",
     options: [
