@@ -2,7 +2,7 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
-import PercentageBar from "@/Components/Bar";
+import Bar from "@/Components/Bar";
 type Props = {
   maxLimit: number;
   progress: number;
@@ -27,7 +27,7 @@ const Progress = ({ maxLimit, progress }: Props) => {
           <Text text={`${progress}/${maxLimit}`} variant="titleCard" />
         </span>
       </div>
-      <PercentageBar progress={progress} maxLimit={maxLimit} />
+      <Bar progress={progress} maxLimit={maxLimit} />
     </div>
   );
 };

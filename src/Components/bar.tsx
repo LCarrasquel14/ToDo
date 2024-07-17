@@ -6,7 +6,7 @@ type Props = {
   maxLimit: number;
 };
 
-const PercentageBar = ({ progress, maxLimit }: Props) => {
+const Bar = ({ progress, maxLimit }: Props) => {
   const percentage = Math.round((progress / maxLimit) * 100);
   const barPercentage = `${percentage}%`;
   const baseClass = `h-full max-w-full`;
@@ -23,4 +23,4 @@ const PercentageBar = ({ progress, maxLimit }: Props) => {
   ) : null;
 };
 
-export default PercentageBar;
+export default Bar;
