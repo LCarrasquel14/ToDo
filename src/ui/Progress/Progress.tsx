@@ -2,7 +2,7 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
-import PercentageBar from "@/Components/bar";
+import PercentageBar from "@/Components/Bar";
 
 type Props = {
   maxLimit: number;
