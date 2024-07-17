@@ -23,7 +23,7 @@ const Tab = ({ tabs, onTab }: Props) => {
         <li
           key={tab.id}
           onClick={() => handleTab(tab.id)}
-          className={`pr-2 flex flex-row items-start justify-center gap-2 w-[137px] ${tab.selected && "border-b-2 border-indigo-500"}`}
+          className={`pr-2 flex flex-row items-start justify-center gap-2 w-[137px] cursor-pointer ${tab.selected && "border-b-2 border-indigo-500"}`}
         >
           <Icon icon="board" size={16} />
           <Text
