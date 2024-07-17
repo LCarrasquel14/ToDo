@@ -2,7 +2,7 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
-import ProgressBar from "@/Components/Bar";
+import PercentageBar from "@/Components/bar";
 
 type Props = {
   maxLimit: number;
@@ -11,7 +11,6 @@ type Props = {
 
 const Progress = ({ maxLimit, progress }: Props) => {
   const [showMenu, setShowMenu] = React.useState(false);
-  const validate = progress <= maxLimit;
   return (
     <div className="w-[280px] h-[30px]">
       <div className="flex flex-row items-center justify-between">
@@ -29,11 +28,7 @@ const Progress = ({ maxLimit, progress }: Props) => {
           <Text text={`${progress}/${maxLimit}`} variant="titleCard" />
         </span>
       </div>
-      <ProgressBar
-        progress={progress}
-        maxLimit={maxLimit}
-        validate={validate}
-      />
+      <PercentageBar progress={progress} maxLimit={maxLimit} />
     </div>
   );
 };
