@@ -4,10 +4,9 @@ import clsx from "clsx";
 type Props = {
   progress: number;
   maxLimit: number;
-  validate?: boolean;
 };
 
-const percentageBar = ({ progress, maxLimit, validate }: Props) => {
+const percentageBar = ({ progress, maxLimit }: Props) => {
   const percentage = Math.round((progress / maxLimit) * 100);
   const barPercentage = `${percentage}%`;
   const baseClass = `h-full max-w-full`;
@@ -17,7 +16,7 @@ const percentageBar = ({ progress, maxLimit, validate }: Props) => {
     "bg-almostCompleted": percentage >= 66 && percentage < 100,
     "bg-finish": percentage === 100,
   });
-  return validate ? (
+  return percentage <= 100 ? (
     <div className="h-1 w-full border mt-2 bg-option">
       <div className={combinated} style={{ width: barPercentage }}></div>
     </div>

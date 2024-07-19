@@ -10,7 +10,6 @@ type Props = {
 };
 
 const Progress = ({ maxLimit, progress }: Props) => {
-  const validate = progress <= maxLimit;
   return (
     <div className="w-[280px] h-[30px]">
       <div className="flex flex-row items-center justify-between">
@@ -22,11 +21,7 @@ const Progress = ({ maxLimit, progress }: Props) => {
           <Text text={`${progress}/${maxLimit}`} variant="titleCard" />
         </span>
       </div>
-      <ProgressBar
-        progress={progress}
-        maxLimit={maxLimit}
-        validate={validate}
-      />
+      <ProgressBar progress={progress} maxLimit={maxLimit} />
     </div>
   );
 };
