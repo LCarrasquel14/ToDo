@@ -42,16 +42,10 @@ export type IconProps = {
 const Icon = ({ size, icon, className }: IconProps) => {
   switch (icon) {
     case "arrowDown":
-      return <IoIosArrowDown size={size} className={className} />;
+      return <IoIosArrowDown size={size} />;
     case "darkmode":
       return (
-        <Image
-          src="/darkmode.svg"
-          width={size}
-          height={size}
-          alt="darkmode"
-          className={className}
-        />
+        <Image src="/darkmode.svg" width={size} height={size} alt="darkmode" />
       );
     case "lightmode":
       return (
@@ -60,21 +54,12 @@ const Icon = ({ size, icon, className }: IconProps) => {
           width={size}
           height={size}
           alt="lightmode"
-          className={className}
         />
       );
     case "close":
-      return <AiOutlineClose size={size} className={className} />;
+      return <AiOutlineClose size={size} />;
     case "tasks":
-      return (
-        <Image
-          className={className}
-          src="/Tasks.svg"
-          width={size}
-          height={size}
-          alt="tasks"
-        />
-      );
+      return <Image src="/Tasks.svg" width={size} height={size} alt="tasks" />;
     case "add":
       return (
         <Image
@@ -86,15 +71,7 @@ const Icon = ({ size, icon, className }: IconProps) => {
         />
       );
     case "board":
-      return (
-        <Image
-          className={className}
-          src="/Board.png"
-          width={size}
-          height={size}
-          alt="board"
-        />
-      );
+      return <Image src="/Board.svg" width={size} height={size} alt="board" />;
     case "threePoints":
       return (
         <Image

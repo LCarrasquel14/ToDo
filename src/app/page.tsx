@@ -10,7 +10,7 @@ type Button = {
   selected: boolean;
 };
 
-const page = () => {
+const Page = () => {
   const [buttonSelected, setButtonSelected] = React.useState<[Button, Button]>([
     {
       label: "Light",
@@ -48,4 +48,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

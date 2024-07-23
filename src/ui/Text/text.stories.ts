@@ -15,7 +15,7 @@ export const PageTitle: Story = {
   },
 };
 
-export const title: Story = {
+export const Title: Story = {
   args: {
     tag: "span",
     text: "Welcome back, Vincent 👋",
@@ -23,7 +23,7 @@ export const title: Story = {
   },
 };
 
-export const titleCard: Story = {
+export const TitleCard: Story = {
   args: {
     tag: "span",
     text: "Design new ui presentation",
@@ -31,7 +31,7 @@ export const titleCard: Story = {
   },
 };
 
-export const descriptionCard: Story = {
+export const DescriptionCard: Story = {
   args: {
     tag: "span",
     text: "Dribbble marketing",
@@ -39,7 +39,7 @@ export const descriptionCard: Story = {
   },
 };
 
-export const subtitle: Story = {
+export const Subtitle: Story = {
   args: {
     tag: "span",
     text: "subtitle",
@@ -47,7 +47,7 @@ export const subtitle: Story = {
   },
 };
 
-export const option: Story = {
+export const Option: Story = {
   args: {
     tag: "span",
     text: "add new",
@@ -55,7 +55,7 @@ export const option: Story = {
   },
 };
 
-export const optionSelected: Story = {
+export const OptionSelected: Story = {
   args: {
     tag: "span",
     text: "Board view",
