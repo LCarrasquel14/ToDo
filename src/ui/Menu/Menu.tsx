@@ -30,9 +30,9 @@ const Menu = ({ options, onOptionClicked }: MenuProps) => {
           </i>
           <ul className="flex flex-col border rounded w-[100px] h-[98px] p-[10px] top-[20px] right-[-95px] items-start absolute">
             {options.map((option: OptionProps) => (
-              <ol onClick={() => onOptionClicked(option.key)} key={option.key}>
+              <li onClick={() => onOptionClicked(option.key)} key={option.key}>
                 <Text variant="titleCard" text={option.label} />
-              </ol>
+              </li>
             ))}
           </ul>
         </div>

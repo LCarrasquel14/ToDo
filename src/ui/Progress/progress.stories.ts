@@ -10,6 +10,6 @@ type Story = StoryObj<typeof Progress>;
 export const Default: Story = {
   args: {
     maxLimit: 10,
-    progress: 7,  
+    progress: 7,
   },
 };
