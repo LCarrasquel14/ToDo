@@ -11,5 +11,13 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   args: {
     label: "New template",
+    variant: "primary",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    label: "Save",
+    variant: "secondary",
   },
 };

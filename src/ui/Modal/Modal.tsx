@@ -1,31 +1,47 @@
-import ReactModal from "react-modal";
-
 import React from "react";
-import Icon from "../Icon/Icon";
+import Modal from "react-modal";
+import Form from "@/Components/Form";
 
-type Props = {
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+const ModalComponent = ({
+  children,
+  isOpen,
+}: {
+  children: React.ReactNode;
   isOpen: boolean;
-  onClose?: () => void;
-  children?: React.ReactNode;
-};
+}) => {
+  const [modalIsOpen, setIsOpen] = React.useState(isOpen);
 
-const Modal = ({ isOpen, children }: Props) => {
-  return isOpen ? (
-    <div className="flex items-center justify-end">
-      <Icon icon="close" size={24} className="cursor-pointer" />
-      <ReactModal
-        isOpen={isOpen}
-        overlayClassName="modal-overlay"
-        className="modal-content"
-        aria={{
-          labelledby: "heading",
-          describedby: "full_description",
-        }}
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  return (
+    <div>
+      <div onClick={openModal}>{children}</div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 focus:outline-none"
       >
-        {children}
-      </ReactModal>
+        <Form />
+      </Modal>
     </div>
-  ) : null;
+  );
 };
 
-export default Modal;
+export default ModalComponent;
