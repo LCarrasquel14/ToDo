@@ -1,7 +1,6 @@
 import React from "react";
 import Text from "../Text/Text";
 import Icon from "../Icon/Icon";
-<<<<<<< HEAD
 import ModalComponent from "../Modal/Modal";
 import Navigation from "../Navigation/Navigation";
 import { options, options2 } from "@/data/menu";
@@ -27,16 +26,6 @@ const SideBar = () => {
           onOptionSelected={() => {}}
         />
       </div>
-=======
-
-type Props = {};
-
-const SideBar = (props: Props) => {
-  return (
-    <div className="flex flex-row w-[262px] h-[30px] items-center justify-between">
-      <Text text="Projects️" variant="PageTitle" />
-      <Icon icon="add" size={20} />
->>>>>>> 7dfd84209c2f2d2b535a220adc241b84cc47b5d4
     </div>
   );
 };
