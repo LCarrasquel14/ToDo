@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import React from "react";
 
-type Props = {
+export type ButtonProps = {
   label: string;
-  variant?: string;
+  variant?: "primary" | "secondary";
 };
 
-const Button = ({ label, variant }: Props) => {
+const Button = ({ label, variant }: ButtonProps) => {
   const baseClass = "text-white font-semibold";
   const combinedClasses = clsx(baseClass, {
     "py-3 px-6 bg-titleColor text-white rounded-full font-semibold":
