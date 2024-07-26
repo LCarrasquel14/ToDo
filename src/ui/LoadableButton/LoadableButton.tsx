@@ -2,14 +2,12 @@ import React from "react";
 import Button from "../Button/Button";
 import type { ButtonProps } from "../Button/Button";
 
-type Props = {
+interface Props extends ButtonProps {
   isLoading: boolean;
-  label: string;
-  variant?: ButtonProps["variant"];
-};
+}
 
-const LoadableButton = ({ isLoading, label, variant }: Props) => {
-  return <Button label={isLoading ? "Loading..." : label} variant={variant} />;
+const LoadableButton = ({ isLoading, ...props }: Props) => {
+  return <Button {...props} label={isLoading ? "Loading..." : props.label} />;
 };
 
 export default LoadableButton;
