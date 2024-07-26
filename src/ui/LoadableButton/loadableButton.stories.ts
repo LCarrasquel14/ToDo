@@ -10,5 +10,7 @@ type Story = StoryObj<typeof LoadableButton>;
 export const Primary: Story = {
   args: {
     isLoading: false,
+    label: "Save",
+    variant: "secondary",
   },
 };
