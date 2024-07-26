@@ -19,20 +19,9 @@ const ModalComponent = ({
   children: React.ReactNode;
   isOpen: boolean;
 }) => {
-  const [modalIsOpen, setIsOpen] = React.useState(isOpen);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <Modal
-      isOpen={modalIsOpen}
-      onRequestClose={closeModal}
+      isOpen={isOpen}
       className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 focus:outline-none"
     >
       {children}

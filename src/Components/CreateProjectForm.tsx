@@ -1,4 +1,5 @@
 import Input from "@/ui/Input/Input";
+import LoadableButton from "@/ui/LoadableButton/LoadableButton";
 import React from "react";
 
 const CreateProjectForm: React.FC = () => {
@@ -8,6 +9,7 @@ const CreateProjectForm: React.FC = () => {
       <Input name="onwerId" type="text" />
       <Input name="description" type="text" />
       <Input name="date" type="date" />
+      <LoadableButton isLoading={false} label="Save" variant="secondary" />
     </form>
   );
 };
