@@ -2,12 +2,18 @@ import ModalComponent from "@/Components/Modal";
 import React from "react";
 import Input from "../Input/Input";
 import LoadableButton from "../LoadableButton/LoadableButton";
+import SelectComponent from "@/Components/SelectComponent";
 
 type Props = {
   isOpen: boolean;
 };
 
 const AddTaskModal = ({ isOpen }: Props) => {
+  const options = [
+    { label: "High", value: "High" },
+    { label: "Medium", value: "Medium" },
+    { label: "Low", value: "Low" },
+  ];
   return (
     <ModalComponent isOpen={isOpen}>
       {" "}
@@ -17,6 +23,7 @@ const AddTaskModal = ({ isOpen }: Props) => {
         <Input name="subTitle" type="text" />
         <Input name="description" type="text" />
         <Input name="date" type="date" />
+        <SelectComponent options={options} onchange={() => {}} />
         <LoadableButton isLoading={false} label="Save" variant="secondary" />
       </form>
     </ModalComponent>
