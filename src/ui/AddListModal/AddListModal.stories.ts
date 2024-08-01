@@ -11,5 +11,8 @@ type Story = StoryObj<typeof AddListModal>;
 export const Default: Story = {
   args: {
     isOpen: true,
+    onAddList: ({ nameList }: { nameList: string }) => {
+      console.log(`added ${nameList}`);
+    },
   },
 };

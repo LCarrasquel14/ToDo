@@ -11,5 +11,8 @@ type Story = StoryObj<typeof AddTaskModal>;
 export const Default: Story = {
   args: {
     isOpen: true,
+    onAddTask(task) {
+      console.log(task);
+    },
   },
 };

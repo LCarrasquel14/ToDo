@@ -1,11 +1,13 @@
 const Input = ({
   name,
   type,
-  onchange,
+  value,
+  onChange,
 }: {
   name: string;
   type: string;
-  onchange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
   return (
     <div>
@@ -15,7 +17,7 @@ const Input = ({
         type={type}
         placeholder={name}
         required
-        onChange={onchange}
+        onChange={onChange}
       />
     </div>
   );

@@ -1,14 +1,20 @@
 import CreateProjectForm from "@/Components/CreateProjectForm";
 import ModalComponent from "@/Components/Modal";
+import { ProjectProps } from "@/entities/Project";
 import React from "react";
 
 type Props = {
   isOpen: boolean;
+  onAddProject: (project: Project) => void;
 };
 
-const AddProjectModal = ({ isOpen }: Props) => {
+export type Project = Omit<ProjectProps, "id" | "usersIncluded" | "onwerId">;
+
+const AddProjectModal = ({ isOpen, onAddProject }: Props) => {
   return (
-    <ModalComponent isOpen={isOpen}>{<CreateProjectForm />}</ModalComponent>
+    <ModalComponent isOpen={isOpen}>
+      <CreateProjectForm onAddProject={onAddProject} />
+    </ModalComponent>
   );
 };
 

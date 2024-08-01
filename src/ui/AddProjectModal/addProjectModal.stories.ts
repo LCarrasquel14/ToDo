@@ -11,5 +11,8 @@ type Story = StoryObj<typeof AddProjectModal>;
 export const Default: Story = {
   args: {
     isOpen: true,
+    onAddProject(project) {
+      console.log(project);
+    },
   },
 };

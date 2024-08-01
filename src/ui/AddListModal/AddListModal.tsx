@@ -2,28 +2,43 @@ import ModalComponent from "@/Components/Modal";
 import LoadableButton from "../LoadableButton/LoadableButton";
 import React from "react";
 import Input from "../Input/Input";
-import SelectComponent from "@/Components/SelectComponent";
+import { ListProps } from "@/entities/List";
 
 type Props = {
   isOpen: boolean;
+  onAddList: (list: List) => void;
 };
+type List = Omit<ListProps, "id" | "ProjectId" | "tasks">;
 
-const AddListModal = ({ isOpen }: Props) => {
+const AddListModal = ({ isOpen, onAddList }: Props) => {
   const [inputValue, setInputValue] = React.useState("");
-  const onINputChange = (value: string) => {
+  const onInputChange = (value: string) => {
     setInputValue(value);
-    console.log(inputValue);
+  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onAddList({ nameList: inputValue });
+    setInputValue("");
   };
   return (
     <ModalComponent isOpen={isOpen}>
       {" "}
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-4">
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-4"
+      >
         <Input
-          name="title"
+          name="nameList"
           type="text"
-          onchange={(e) => onINputChange(e.target.value)}
+          value={inputValue}
+          onChange={(e) => onInputChange(e.target.value)}
         />
-        <LoadableButton isLoading={false} label="Save" variant="secondary" />
+        <LoadableButton
+          type="submit"
+          isLoading={false}
+          label="Save"
+          variant="secondary"
+        />
       </form>
     </ModalComponent>
   );
