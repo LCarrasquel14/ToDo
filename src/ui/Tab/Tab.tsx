@@ -1,7 +1,6 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
-import clsx from "clsx";
 
 interface tabProps {
   label: string;

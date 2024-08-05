@@ -1,6 +1,5 @@
 import { createElement } from "react";
 import { clsx } from "clsx";
-import { OptionProps } from "../Menu/Menu";
 
 type Props = {
   text: string;
