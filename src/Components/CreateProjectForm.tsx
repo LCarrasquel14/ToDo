@@ -7,7 +7,6 @@ type Props = {
 };
 const CreateProjectForm = ({ onAddProject }: Props) => {
   const [title, setTitle] = React.useState("");
-  const [onwerId, setOnwerId] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [date, setDate] = React.useState("");
 
@@ -18,7 +17,6 @@ const CreateProjectForm = ({ onAddProject }: Props) => {
       dateCreated: date,
     });
     setTitle("");
-    setOnwerId("");
     setDescription("");
     setDate("");
   };
@@ -33,12 +31,6 @@ const CreateProjectForm = ({ onAddProject }: Props) => {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-      />
-      <Input
-        name="onwerId"
-        type="text"
-        value={onwerId}
-        onChange={(e) => setOnwerId(e.target.value)}
       />
       <Input
         name="description"

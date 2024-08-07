@@ -8,13 +8,14 @@ import { TaskProps } from "@/entities/Task";
 type Props = {
   isOpen: boolean;
   onAddTask: (task: Task) => void;
+  listOption: { label: string; value: string; id: string }[];
 };
 
 type Task = Omit<TaskProps, "id" | "parentId"> & {
   option?: string;
 };
 
-const AddTaskModal = ({ isOpen, onAddTask }: Props) => {
+const AddTaskModal = ({ isOpen, onAddTask, listOption }: Props) => {
   const [nameTask, setNameTask] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [date, setDate] = React.useState("");
@@ -33,11 +34,7 @@ const AddTaskModal = ({ isOpen, onAddTask }: Props) => {
     setDate("");
     setOption("");
   };
-  const options = [
-    { label: "High", value: "High" },
-    { label: "Medium", value: "Medium" },
-    { label: "Low", value: "Low" },
-  ];
+
   return (
     <ModalComponent isOpen={isOpen}>
       {" "}
@@ -64,7 +61,7 @@ const AddTaskModal = ({ isOpen, onAddTask }: Props) => {
           onChange={(e) => setDate(e.target.value)}
         />
         <SelectComponent
-          options={options}
+          options={listOption}
           onchange={(value) => setOption(value || "")}
         />
         <LoadableButton

@@ -18,6 +18,7 @@ const Input = ({
         placeholder={name}
         required
         onChange={onChange}
+        value={value}
       />
     </div>
   );

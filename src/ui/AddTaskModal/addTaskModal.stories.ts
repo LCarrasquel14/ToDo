@@ -14,5 +14,17 @@ export const Default: Story = {
     onAddTask(task) {
       console.log(task);
     },
+    listOption: [
+      {
+        label: "List 1",
+        value: "1",
+        id: "1",
+      },
+      {
+        label: "List 2",
+        value: "2",
+        id: "2",
+      },
+    ],
   },
 };
