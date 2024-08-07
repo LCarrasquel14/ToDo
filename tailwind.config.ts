@@ -83,6 +83,8 @@ const config: Config = {
       almostCompleted: "rgba(75, 105, 255, 1)",
       toggleContainer: "rgba(28, 29, 34, 0.04)",
       light: "rgba(255, 255, 255, 1)",
+      blue: "rgb(52 98 236);",
+      hoverBlue: "rgba(52, 98, 236, 0.8)",
     },
   },
   plugins: [],
