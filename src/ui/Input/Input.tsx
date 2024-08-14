@@ -7,7 +7,7 @@ const Input = ({
 }: {
   name: string;
   type: string;
-  value?: string;
+  value: string;
   required?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
