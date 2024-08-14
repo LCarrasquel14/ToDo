@@ -1,6 +1,5 @@
 import { createElement } from "react";
 import { clsx } from "clsx";
-import { OptionProps } from "../Menu/Menu";
 
 type Props = {
   text: string;
@@ -12,14 +11,16 @@ type Props = {
     | "titleCard"
     | "descriptionCard"
     | "option"
-    | "optionSelected";
+    | "optionSelected"
+    | "deadline";
   size?: number;
+  className?: string;
 
   onClick?: () => void;
 };
 
-const Text = ({ text, tag = "span", variant, size }: Props) => {
-  const baseClass = `font-exo2 text-[${size ? size : 16}px]`;
+const Text = ({ text, tag = "span", variant, size, className }: Props) => {
+  const baseClass = `font-exo2 text-[${size ? size : 16}px] ${className}`;
   const combinedClasses = clsx(baseClass, {
     "text-titleColor text-PageTitle": variant === "PageTitle",
     "text-titleColor text-title": variant === "title",
@@ -28,6 +29,7 @@ const Text = ({ text, tag = "span", variant, size }: Props) => {
     "text-subtitleColor text-description": variant === "descriptionCard",
     "text-subtitleColor text-option": variant === "option",
     "text-titleColor text-option": variant === "optionSelected",
+    "text-red text-option": variant === "deadline",
   });
 
   return createElement(

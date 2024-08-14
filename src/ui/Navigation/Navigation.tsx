@@ -20,7 +20,7 @@ const Navigation = ({ title, options, onOptionSelected }: Props) => {
   const baseClass =
     "cursor-pointer flex flex-row items-center py-[10px] px-[18px] rounded-full";
   return (
-    <div className="w-[261px] min-h-[206px]">
+    <div className="w-[261px]">
       <div className="flex flex-row items-center justify-between mb-2">
         <span className="cursor-pointer">
           <Text text={title} variant="titleCard" />

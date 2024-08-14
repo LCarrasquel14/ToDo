@@ -13,7 +13,7 @@ const Progress = ({ maxLimit, progress }: Props) => {
   return (
     <div className="w-[280px] h-[30px]">
       <div className="flex flex-row items-center justify-between">
-        <div className="flex flex-row items-center gap-1">
+        <div className="flex flex-row items-center justify-center gap-1">
           <i
             onClick={() => setShowMenu(!showMenu)}
             className="cursor-pointer mt-[7px]"
@@ -21,10 +21,10 @@ const Progress = ({ maxLimit, progress }: Props) => {
             {" "}
             <Icon icon="tasks" size={16} />
           </i>
-          <Text variant="subtitle" text="progress" />
+          <Text variant="option" text="Progress" className="pt-2" />
         </div>
         <span>
-          <Text text={`${progress}/${maxLimit}`} variant="titleCard" />
+          <Text text={`${progress}/${maxLimit}`} variant="optionSelected" />
         </span>
       </div>
       <Bar progress={progress} maxLimit={maxLimit} />
