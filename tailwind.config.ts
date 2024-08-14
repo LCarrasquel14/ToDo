@@ -85,6 +85,8 @@ const config: Config = {
       light: "rgba(255, 255, 255, 1)",
       blue: "rgb(52 98 236);",
       hoverBlue: "rgba(52, 98, 236, 0.8)",
+      deadline: "rgba(255, 121, 121, 0.1)",
+      red: "rgba(255, 121, 121, 1)",
     },
   },
   plugins: [],
