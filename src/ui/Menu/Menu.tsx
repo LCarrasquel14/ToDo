@@ -6,17 +6,18 @@ import Text from "../Text/Text";
 export interface OptionProps {
   label: string;
   key: string;
-  selected: boolean;
 }
 interface MenuProps {
   options: OptionProps[];
   onOptionClicked: (id: string) => void;
 }
 
+// TODO: the position of the menu should come by parameter or set automatically
+
 const Menu = ({ options, onOptionClicked }: MenuProps) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="w-[259px] h-9 flex flex-row relative">
+    <div className="h-9 flex flex-row relative">
       <i
         onClick={() => setShowMenu(!showMenu)}
         className={`cursor-pointer w-[26px] h-[26px] ${showMenu && "hidden"}`}
@@ -28,7 +29,7 @@ const Menu = ({ options, onOptionClicked }: MenuProps) => {
           <i onClick={() => setShowMenu(!showMenu)} className="cursor-pointer">
             <Icon icon="close" size={20} />
           </i>
-          <ul className="flex flex-col border rounded w-[100px] h-[98px] p-[10px] top-[20px] right-[-95px] items-start absolute">
+          <ul className="flex flex-col bg-white border-bgOption border-2 rounded-lg w-[100px] h-auto p-[10px] top-0 right-5 items-start absolute">
             {options.map((option: OptionProps) => (
               <li onClick={() => onOptionClicked(option.key)} key={option.key}>
                 <Text variant="titleCard" text={option.label} />

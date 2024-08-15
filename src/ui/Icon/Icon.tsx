@@ -32,7 +32,8 @@ export type IconProps = {
     | "tasks"
     | "close"
     | "darkmode"
-    | "lightmode";
+    | "lightmode"
+    | "comments";
 
   onClick?: () => void;
   children?: React.ReactNode;
@@ -41,6 +42,10 @@ export type IconProps = {
 
 const Icon = ({ size, icon, className }: IconProps) => {
   switch (icon) {
+    case "comments":
+      return (
+        <Image src="/Comments.svg" width={size} height={size} alt="comments" />
+      );
     case "arrowDown":
       return <IoIosArrowDown size={size} />;
     case "darkmode":

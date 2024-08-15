@@ -13,7 +13,7 @@ const Date = ({ date, variant }: Props) => {
     month: "short",
     year: "numeric",
   });
-  const baseClass = "inline-block w-auto py-2 px-3 rounded-full font-semibold";
+  const baseClass = "inline-block w-fit py-2 px-3 rounded-full font-semibold";
   const combinedClasses = clsx(baseClass, {
     "bg-bgOption": variant === "primary",
     "bg-deadline": variant === "secondary",
