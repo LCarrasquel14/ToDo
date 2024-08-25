@@ -11,11 +11,11 @@ export const Default: Story = {
   args: {
     options: [
       {
-        label: "edit",
+        label: "Edit",
         key: "1",
       },
       {
-        label: "delete",
+        label: "Delete",
         key: "2",
       },
       {

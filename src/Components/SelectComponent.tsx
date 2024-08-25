@@ -14,7 +14,7 @@ const SelectComponent = ({ options, onchange }: Props) => {
   ) => {
     onchange(selectedOption?.value);
   };
-  return <Select options={options} onChange={onSelectOption} />;
+  return <Select options={options} onChange={onSelectOption} required />;
 };
 
 export default SelectComponent;
