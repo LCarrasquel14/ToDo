@@ -47,7 +47,7 @@ const ListViewer = ({ listViewer }: Props) => {
           { label: "List 1", value: "1", id: "1" },
           { label: "List 2", value: "2", id: "2" },
         ]}
-        setIsOpen={setIsOpen}
+        onClose={() => setIsOpen(false)}
       />
     </div>
   );

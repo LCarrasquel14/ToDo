@@ -8,16 +8,16 @@ import Icon from "../Icon/Icon";
 
 type Props = {
   isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
   onAddTask: (task: Task) => void;
   listOption: { label: string; value: string; id: string }[];
+  onClose: () => void;
 };
 
 type Task = Omit<TaskProps, "id" | "parentId"> & {
   option?: string;
 };
 
-const AddTaskModal = ({ isOpen, setIsOpen, onAddTask, listOption }: Props) => {
+const AddTaskModal = ({ isOpen, onAddTask, listOption, onClose }: Props) => {
   const [nameTask, setNameTask] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [date, setDate] = React.useState("");
@@ -37,7 +37,7 @@ const AddTaskModal = ({ isOpen, setIsOpen, onAddTask, listOption }: Props) => {
     setDescription("");
     setDate("");
     setOption("");
-    setIsOpen(false);
+    onClose();
   };
 
   return (
@@ -71,6 +71,7 @@ const AddTaskModal = ({ isOpen, setIsOpen, onAddTask, listOption }: Props) => {
         <SelectComponent
           options={listOption}
           onchange={(value) => setOption(value || "")}
+          required={true}
         />
         <LoadableButton
           type="submit"
