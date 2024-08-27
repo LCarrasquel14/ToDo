@@ -47,7 +47,11 @@ const Icon = ({ size, icon, className }: IconProps) => {
         <Image src="/Comments.svg" width={size} height={size} alt="comments" />
       );
     case "arrowDown":
-      return <IoIosArrowDown size={size} />;
+      return (
+        <div className={className}>
+          <IoIosArrowDown size={size} />
+        </div>
+      );
     case "darkmode":
       return (
         <Image src="/darkmode.svg" width={size} height={size} alt="darkmode" />

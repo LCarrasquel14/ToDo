@@ -6,15 +6,18 @@ type Props = {
     value: string;
   }[];
   onchange: (value: string | undefined) => void;
+  required?: boolean;
 };
 
-const SelectComponent = ({ options, onchange }: Props) => {
+const SelectComponent = ({ options, onchange, required }: Props) => {
   const onSelectOption = (
     selectedOption: SingleValue<{ label: string; value: string }>
   ) => {
     onchange(selectedOption?.value);
   };
-  return <Select options={options} onChange={onSelectOption} />;
+  return (
+    <Select options={options} onChange={onSelectOption} required={required} />
+  );
 };
 
 export default SelectComponent;

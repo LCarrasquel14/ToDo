@@ -3,19 +3,21 @@ import React from "react";
 import Input from "../Input/Input";
 import LoadableButton from "../LoadableButton/LoadableButton";
 import SelectComponent from "@/Components/SelectComponent";
-import { TaskProps } from "@/entities/Task";
+import { Task as TaskProps } from "@/entities/Task";
+import Icon from "../Icon/Icon";
 
 type Props = {
   isOpen: boolean;
   onAddTask: (task: Task) => void;
   listOption: { label: string; value: string; id: string }[];
+  onClose: () => void;
 };
 
 type Task = Omit<TaskProps, "id" | "parentId"> & {
   option?: string;
 };
 
-const AddTaskModal = ({ isOpen, onAddTask, listOption }: Props) => {
+const AddTaskModal = ({ isOpen, onAddTask, listOption, onClose }: Props) => {
   const [nameTask, setNameTask] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [date, setDate] = React.useState("");
@@ -25,14 +27,17 @@ const AddTaskModal = ({ isOpen, onAddTask, listOption }: Props) => {
     onAddTask({
       nameTask,
       description,
-      dateCreated: date,
+      dateCreated: new Date(date),
       listId: option,
       comments: [],
+      subTasks: [],
+      isDone: false,
     });
     setNameTask("");
     setDescription("");
     setDate("");
     setOption("");
+    onClose();
   };
 
   return (
@@ -47,22 +52,26 @@ const AddTaskModal = ({ isOpen, onAddTask, listOption }: Props) => {
           type="text"
           value={nameTask}
           onChange={(e) => setNameTask(e.target.value)}
+          required
         />
         <Input
           name="description"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          required
         />
         <Input
           name="date"
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
+          required
         />
         <SelectComponent
           options={listOption}
           onchange={(value) => setOption(value || "")}
+          required={true}
         />
         <LoadableButton
           type="submit"
