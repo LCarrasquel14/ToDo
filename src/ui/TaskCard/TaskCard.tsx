@@ -44,7 +44,7 @@ const TaskCard = ({ taskInfo, onEdit, onDelete }: Props) => {
   );
 
   return (
-    <div className="flex flex-col gap-5 border-2 border-bgOption rounded-xl p-5 w-[320px]">
+    <div className="flex flex-col gap-5 border-2 mb-4 border-bgOption rounded-xl p-5 w-[320px]">
       <div className="flex flex-row justify-between">
         <div className="flex flex-col gap-2">
           <Text text={taskInfo.nameTask} variant="titleCard" />
