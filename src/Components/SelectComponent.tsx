@@ -15,6 +15,7 @@ const SelectComponent = ({ options, onchange, required }: Props) => {
   ) => {
     onchange(selectedOption?.value);
   };
+
   return (
     <Select options={options} onChange={onSelectOption} required={required} />
   );

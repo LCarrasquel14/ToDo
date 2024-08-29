@@ -16,7 +16,6 @@ const ListViewer = ({ tasksContainer, listOption }: Props) => {
   const countTasks = tasksContainer.tasks.length;
   const [isOpen, setIsOpen] = useState(false);
   const [newTask, setNewTask] = useState({});
-  console.log({ newTask });
 
   return (
     <div className="flex flex-col w-[360px] border-2 border-dashed border-bgOption rounded-xl py-[22px] px-[16px]">

@@ -4,7 +4,7 @@ import Input from "../Input/Input";
 import LoadableButton from "../LoadableButton/LoadableButton";
 import SelectComponent from "@/Components/SelectComponent";
 import { Task as TaskProps } from "@/entities/Task";
-import Icon from "../Icon/Icon";
+import ClickAwayListener from "react-click-away-listener";
 
 type Props = {
   isOpen: boolean;
@@ -40,46 +40,52 @@ const AddTaskModal = ({ isOpen, onAddTask, listOption, onClose }: Props) => {
     onClose();
   };
 
+  const handleClickAway = () => {
+    onClose();
+  };
+
   return (
     <ModalComponent isOpen={isOpen}>
       {" "}
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-4"
-      >
-        <Input
-          name="nameTask"
-          type="text"
-          value={nameTask}
-          onChange={(e) => setNameTask(e.target.value)}
-          required
-        />
-        <Input
-          name="description"
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-        <Input
-          name="date"
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
-        <SelectComponent
-          options={listOption}
-          onchange={(value) => setOption(value || "")}
-          required={true}
-        />
-        <LoadableButton
-          type="submit"
-          isLoading={false}
-          label="Save"
-          variant="secondary"
-        />
-      </form>
+      <ClickAwayListener onClickAway={handleClickAway}>
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-4"
+        >
+          <Input
+            name="nameTask"
+            type="text"
+            value={nameTask}
+            onChange={(e) => setNameTask(e.target.value)}
+            required
+          />
+          <Input
+            name="description"
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+          <Input
+            name="date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            required
+          />
+          <SelectComponent
+            options={listOption}
+            onchange={(value) => setOption(value || "")}
+            required={true}
+          />
+          <LoadableButton
+            type="submit"
+            isLoading={false}
+            label="Save"
+            variant="secondary"
+          />
+        </form>
+      </ClickAwayListener>
     </ModalComponent>
   );
 };

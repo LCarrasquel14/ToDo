@@ -24,10 +24,6 @@ const menuOptions = [
   },
 ];
 
-// const style = {
-//   transform: CSS.Translate.toString({ x: 0, y: 0 } as Transform),
-// };
-
 const TaskCard = ({ taskInfo, onEdit, onDelete }: Props) => {
   const onOptionClicked = (key: string) => {
     if (key === "edit") {
