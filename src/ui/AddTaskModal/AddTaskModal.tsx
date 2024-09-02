@@ -11,17 +11,25 @@ type Props = {
   onAddTask: (task: Task) => void;
   listOption: { label: string; value: string; id: string }[];
   onClose: () => void;
+  listId: string;
 };
 
 type Task = Omit<TaskProps, "id" | "parentId"> & {
   option?: string;
 };
 
-const AddTaskModal = ({ isOpen, onAddTask, listOption, onClose }: Props) => {
+const AddTaskModal = ({
+  isOpen,
+  onAddTask,
+  listOption,
+  onClose,
+  listId,
+}: Props) => {
   const [nameTask, setNameTask] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [date, setDate] = React.useState("");
   const [option, setOption] = React.useState("");
+  const listForDefault = listOption.find((list) => list.id === listId);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onAddTask({
@@ -77,6 +85,7 @@ const AddTaskModal = ({ isOpen, onAddTask, listOption, onClose }: Props) => {
             options={listOption}
             onchange={(value) => setOption(value || "")}
             required={true}
+            defaultValue={listForDefault || ""}
           />
           <LoadableButton
             type="submit"

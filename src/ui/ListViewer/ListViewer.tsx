@@ -49,6 +49,7 @@ const ListViewer = ({ tasksContainer, listOption }: Props) => {
         onAddTask={setNewTask}
         onClose={() => setIsOpen(false)}
         listOption={listOption}
+        listId={tasksContainer.id}
       />
     </div>
   );

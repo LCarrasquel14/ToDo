@@ -20,7 +20,7 @@ type Props = {
 };
 
 const Text = ({ text, tag = "span", variant, size, className }: Props) => {
-  const baseClass = `exo2-700 font-bold text-[${size ? size : 16}px] ${className}`;
+  const baseClass = `font-exo2 font-bold text-[${size ? size : 16}px] ${className}`;
   const combinedClasses = clsx(baseClass, {
     "text-titleColor text-PageTitle": variant === "PageTitle",
     "text-titleColor text-title": variant === "title",
