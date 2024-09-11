@@ -40,7 +40,7 @@ export type IconProps = {
   className?: string;
 };
 
-const Icon = ({ size, icon, className }: IconProps) => {
+const Icon = ({ size, icon, className, onClick }: IconProps) => {
   switch (icon) {
     case "comments":
       return (
@@ -63,6 +63,7 @@ const Icon = ({ size, icon, className }: IconProps) => {
           width={size}
           height={size}
           alt="lightmode"
+          
         />
       );
     case "close":

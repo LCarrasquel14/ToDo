@@ -67,9 +67,6 @@ const config: Config = {
         "2xl": "6rem",
       },
     },
-    fontFamily: {
-      exo2: ["var(--font-exo2)"],
-    },
     colors: {
       titleColor: "#1C1D22",
       subtitleColor: "#1C1D2280",

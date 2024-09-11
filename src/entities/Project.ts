@@ -1,4 +1,4 @@
-export interface ProjectProps {
+export interface Project {
   id: string | null;
   name: string;
   onwerId: string;
