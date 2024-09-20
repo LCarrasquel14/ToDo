@@ -3,12 +3,11 @@ import Menu from "../Menu/Menu";
 import Progress from "../Progress/Progress";
 import Text from "../Text/Text";
 import Date from "../DateTag/DateTag";
-/*   import { CSS } from "@dnd-kit/utilities";
-  import { Transform } from "@dnd-kit/utilities"; */
 import CommentsViewer from "../CommentsViewers/CommentsViewer";
+import { useDraggable } from "@dnd-kit/core";
 
 type Props = {
-  taskInfo: Task;
+  taskInfo: Omit<Task, "id"> & { id: string };
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
 };
@@ -38,9 +37,24 @@ const TaskCard = ({ taskInfo, onEdit, onDelete }: Props) => {
     (acc, task) => (task.isDone ? acc + 1 : acc),
     0
   );
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id: taskInfo.id,
+  });
+
+  const style = transform
+    ? {
+        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+      }
+    : undefined;
 
   return (
-    <div className="flex flex-col gap-5 border-2 mb-4 border-bgOption rounded-xl p-5 w-[320px]">
+    <div
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+      {...listeners}
+      className="flex flex-col gap-5 border-2 mb-4 border-bgOption rounded-xl p-5 w-[320px]"
+    >
       <div className="flex flex-row justify-between">
         <div className="flex flex-col gap-2">
           <Text text={taskInfo.nameTask} variant="titleCard" />

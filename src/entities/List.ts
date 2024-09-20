@@ -1,6 +1,6 @@
 import type { Task } from "./Task";
 export interface List {
-  id: string | null;
+  id: string;
   nameList: string;
   ProjectId: string;
   tasks: Task[];

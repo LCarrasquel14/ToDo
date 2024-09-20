@@ -1,6 +1,6 @@
 import type { CommentsProps } from "./Comments";
 export interface Task {
-  id: string | null;
+  id: string;
   nameTask: string;
   listId: string;
   parentId: string | null;

@@ -6,6 +6,7 @@ import AddTaskModal from "../AddTaskModal/AddTaskModal";
 import React from "react";
 import Icon from "../Icon/Icon";
 import DropZone from "@/Components/DropZone";
+import { useDroppable } from "@dnd-kit/core";
 
 type Props = {
   tasksContainer: List;
@@ -16,9 +17,15 @@ const ListViewer = ({ tasksContainer, listOption }: Props) => {
   const countTasks = tasksContainer.tasks.length;
   const [isOpen, setIsOpen] = useState(false);
   const [newTask, setNewTask] = useState({});
+  const { setNodeRef } = useDroppable({
+    id: tasksContainer.id!,
+  });
 
   return (
-    <div className="flex flex-col w-[360px] border-2 border-dashed border-bgOption rounded-xl py-[22px] px-[16px]">
+    <div
+      ref={setNodeRef}
+      className="flex flex-col w-[360px] border-2 border-dashed border-bgOption rounded-xl py-[22px] px-[16px]"
+    >
       <div className="mb-4 h-[18px] flex flex-row justify-between">
         <Text
           text={`${tasksContainer.nameList} (${countTasks}) `}
@@ -37,7 +44,6 @@ const ListViewer = ({ tasksContainer, listOption }: Props) => {
           <TaskCard
             key={task.id}
             taskInfo={task}
-            listOption={listOption}
             onEdit={() => {}}
             onDelete={() => {}}
           />

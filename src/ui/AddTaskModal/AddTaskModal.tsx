@@ -5,13 +5,14 @@ import LoadableButton from "../LoadableButton/LoadableButton";
 import SelectComponent from "@/Components/SelectComponent";
 import { Task as TaskProps } from "@/entities/Task";
 import ClickAwayListener from "react-click-away-listener";
+import { List } from "@/entities/List";
 
 type Props = {
   isOpen: boolean;
   onAddTask: (task: Task) => void;
   listOption: { label: string; value: string; id: string }[];
   onClose: () => void;
-  listId: string;
+  listId: List["id"];
 };
 
 type Task = Omit<TaskProps, "id" | "parentId"> & {
@@ -85,7 +86,7 @@ const AddTaskModal = ({
             options={listOption}
             onchange={(value) => setOption(value || "")}
             required={true}
-            defaultValue={listForDefault || ""}
+            defaultValue={listForDefault || { label: "", value: "", id: "" }}
           />
           <LoadableButton
             type="submit"
