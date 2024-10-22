@@ -9,6 +9,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    backgroundColor: "white",
   },
 };
 
@@ -23,6 +24,7 @@ const ModalComponent = ({
     <Modal
       isOpen={isOpen}
       className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 focus:outline-none"
+      style={customStyles}
     >
       {children}
     </Modal>

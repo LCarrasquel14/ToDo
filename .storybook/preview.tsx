@@ -1,7 +1,11 @@
-import React from 'react'; 
+import React from "react";
 import type { Preview } from "@storybook/react";
 import "../src/app/globals.css";
 import { Exo_2 } from "next/font/google";
+import { initialize, mswLoader } from "msw-storybook-addon";
+
+// Initialize MSW
+initialize();
 
 export const Exo2 = Exo_2({
   subsets: ["latin"],
@@ -18,6 +22,8 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    // Provide the MSW addon loader globally
+    loaders: [mswLoader],
   },
   decorators: [
     (Story) => (

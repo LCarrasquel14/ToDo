@@ -44,7 +44,10 @@ const TaskCard = ({ taskInfo, onEdit, onDelete }: Props) => {
   const style = transform
     ? {
         transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-        boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
+        boxShadow: "0 0 2px 2px rgba(0, 0, 0, 0.2)",
+        backgroundColor: "white",
+        border: "1px solid #1c1d220a",
+        zIndex: 1,
       }
     : undefined;
 
