@@ -2,7 +2,7 @@ import React from "react";
 import Text from "../Text/Text";
 import Icon from "../Icon/Icon";
 import Navigation from "../Navigation/Navigation";
-import { options, options2 } from "@/data/menu";
+import { options, options2 } from "../../data/menu";
 import AddProjectModal from "../AddProjectModal/AddProjectModal";
 import { Project } from "@/entities/Project";
 

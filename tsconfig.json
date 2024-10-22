@@ -18,8 +18,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["*"]
     },
+    "baseUrl": "src",
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/tailwind-merge/types"

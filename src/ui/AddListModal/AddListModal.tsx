@@ -1,14 +1,14 @@
-import ModalComponent from "@/Components/Modal";
+import ModalComponent from "../../Components/Modal";
 import LoadableButton from "../LoadableButton/LoadableButton";
 import React from "react";
 import Input from "../Input/Input";
-import { ListProps } from "@/entities/List";
+import { List } from "@/entities/List";
 
 type Props = {
   isOpen: boolean;
-  onAddList: (list: List) => void;
+  onAddList: (list: ListProps) => void;
 };
-type List = Omit<ListProps, "id" | "ProjectId" | "tasks">;
+type ListProps = Omit<List, "id" | "ProjectId" | "tasks">;
 
 const AddListModal = ({ isOpen, onAddList }: Props) => {
   const [inputValue, setInputValue] = React.useState("");

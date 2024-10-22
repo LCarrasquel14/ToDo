@@ -3,7 +3,6 @@ import LoadableButton from "@/ui/LoadableButton/LoadableButton";
 import React from "react";
 import type { Project } from "@/ui/AddProjectModal/AddProjectModal";
 import ClickAwayListener from "react-click-away-listener";
-import { on } from "events";
 type Props = {
   onAddProject: (project: Project) => void;
   onClose: () => void;

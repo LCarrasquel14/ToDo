@@ -1,5 +1,5 @@
-import CreateProjectForm from "@/Components/CreateProjectForm";
-import ModalComponent from "@/Components/Modal";
+import CreateProjectForm from "../../Components/CreateProjectForm";
+import ModalComponent from "../../Components/Modal";
 import { Project as ProjectProps } from "@/entities/Project";
 import React from "react";
 

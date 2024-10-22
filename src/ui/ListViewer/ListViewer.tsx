@@ -5,7 +5,7 @@ import TaskCard from "../TaskCard/TaskCard";
 import AddTaskModal from "../AddTaskModal/AddTaskModal";
 import React from "react";
 import Icon from "../Icon/Icon";
-import DropZone from "@/Components/DropZone";
+import DropZone from "../../Components/DropZone";
 import { useDroppable } from "@dnd-kit/core";
 
 type Props = {

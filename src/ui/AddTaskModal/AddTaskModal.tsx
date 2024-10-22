@@ -1,8 +1,8 @@
-import ModalComponent from "@/Components/Modal";
+import ModalComponent from "../../Components/Modal";
 import React from "react";
 import Input from "../Input/Input";
 import LoadableButton from "../LoadableButton/LoadableButton";
-import SelectComponent from "@/Components/SelectComponent";
+import SelectComponent from "../../Components/SelectComponent";
 import { Task as TaskProps } from "@/entities/Task";
 import ClickAwayListener from "react-click-away-listener";
 import { List } from "@/entities/List";
