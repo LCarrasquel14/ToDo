@@ -17,7 +17,7 @@ const config: StorybookConfig = {
     options: {},
   },
 
-  staticDirs: ["..\\public"],
+  staticDirs: ["..\\public",],
 
   webpackFinal: async (config) => {
     config.module?.rules?.push({
@@ -31,7 +31,7 @@ const config: StorybookConfig = {
   docs: {},
 
   typescript: {
-    reactDocgen: "react-docgen-typescript"
-  }
+    reactDocgen: "react-docgen-typescript",
+  },
 };
 export default config;
