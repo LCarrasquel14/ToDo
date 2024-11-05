@@ -24,6 +24,8 @@
     "@storybook/addon-queryparams": "^7.0.1",
     "@storybook/cli": "^8.3.6",
     "@storybook/react-dom-shim": "^7.0.12",
+    "@tanstack/react-query": "^4.36.1",
+    "@tanstack/react-query-devtools": "^4.36.1",
     "chart.js": "^4.4.3",
     "clsx": "^2.1.1",
     "immutability-helper": "^3.1.1",

@@ -1,7 +1,7 @@
-import Button from "@/ui/Button/Button";
-import React, { useEffect } from "react";
-import Toggle from "@/ui/Toggle/Toggle";
+"use client";
 import { IconProps } from "@/ui/Icon/Icon";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Login from "@/Components/Login";
 
 type Button = {
   label: string;
@@ -9,42 +9,13 @@ type Button = {
   id: string;
   selected: boolean;
 };
+const queryClient = new QueryClient();
 
 const Page = () => {
-  const [buttonSelected, setButtonSelected] = React.useState<[Button, Button]>([
-    {
-      label: "Light",
-      icon: "lightmode",
-      id: "1",
-      selected: true,
-    },
-    {
-      label: "Dark",
-      icon: "darkmode",
-      id: "2",
-      selected: false,
-    },
-  ]);
-  const handleButtonClick = (id: string) => {
-    setButtonSelected((prevState) => {
-      const newButtons = prevState.map((button) => {
-        if (button.id === id) {
-          return { ...button, selected: true };
-        } else {
-          return { ...button, selected: false };
-        }
-      });
-      return [newButtons[0], newButtons[1]];
-    });
-  };
-  useEffect(() => {
-    console.log({ buttonSelected });
-  }, [buttonSelected]);
-
   return (
-    <div>
-      <Toggle buttons={buttonSelected} handleButtonClick={handleButtonClick} />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Login />
+    </QueryClientProvider>
   );
 };
 
